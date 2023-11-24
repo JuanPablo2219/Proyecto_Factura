@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS client (
+id SERIAL,
+nui INT UNIQUE,
+fullname VARCHAR(100) NOT NULL,
+adress VARCHAR(100) NOT NULL,
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE IF NOT EXISTS invoice (
+id SERIAL PRIMARY KEY,
+code VARCHAR(255) UNIQUE NOT NULL,
+create_at TIMESTAMP,
+total DECIMAL(10, 2),
+client_id INT,
+FOREIGN KEY (client_id ) REFERENCES client(id)
+);
