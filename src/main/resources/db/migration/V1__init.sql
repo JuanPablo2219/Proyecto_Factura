@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS client (
     id SERIAL PRIMARY KEY,
-    nui CHAR(10) UNIQUE NOT NULL,
+    nui VARCHAR(10) UNIQUE NOT NULL,
     fullname VARCHAR(100) NOT NULL,
     adress VARCHAR(100) NOT NULL
 );
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS product (
     stock INT
 );
 
-CREATE TABLE IF NOT EXISTS datail (
+CREATE TABLE IF NOT EXISTS detail (
     id SERIAL PRIMARY KEY,
     quantity INT NOT NULL,
     price DECIMAL(10, 2),
