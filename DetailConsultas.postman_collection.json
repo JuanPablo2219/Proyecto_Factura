@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "42884778-eb9b-4b10-b130-2cd0aad1933a",
+		"name": "DetailConsultas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30579600"
+	},
+	"item": [
+		{
+			"name": "GetDetail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostDetail",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
