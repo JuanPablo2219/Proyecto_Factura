@@ -19,16 +19,12 @@ class Product {
     var id: Long? = null
 
     @NotNull(message = "El campo DESCRIPTION es obligatorio")
-    @Column(name = "description", nullable = false, length = 255)
     var description: String? = null
 
     @NotNull(message = "El campo DESCRIPTION es obligatorio")
-    @Column(name = "brand", nullable = false, length = 255)
     var brand: String? = null
 
-    @Column(name = "price", precision = 10, scale = 2)
     var price: BigDecimal? = null
 
-    @Column(name = "stock")
     var stock: Int? = null
 }

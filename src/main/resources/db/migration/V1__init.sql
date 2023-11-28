@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS client (
 CREATE TABLE IF NOT EXISTS invoice (
     id SERIAL PRIMARY KEY,
     code VARCHAR(30) UNIQUE NOT NULL,
-    create_at TIMESTAMP,
+    create_at DATE,
     total DECIMAL(10, 2),
     client_id INT,
     FOREIGN KEY (client_id ) REFERENCES client(id)

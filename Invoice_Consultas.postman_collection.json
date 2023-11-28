@@ -3,7 +3,8 @@
 		"_postman_id": "a5c814b9-14f1-4f2b-a38c-e2c1a42fdb76",
 		"name": "Invoice_Consultas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30579600"
+		"_exporter_id": "30579600",
+		"_collection_link": "https://universal-spaceship-952172.postman.co/workspace/facturacion~964ddbff-a026-486b-aed4-fd26c282ac1d/collection/30579600-a5c814b9-14f1-4f2b-a38c-e2c1a42fdb76?action=share&source=collection_link&creator=30579600"
 	},
 	"item": [
 		{
@@ -32,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"code\":\"777-888\",\r\n    \"create_at\": \"2023-11-25T20:45:58Z\",\r\n    \"total\":263.99,\r\n    \"client_id\":6\r\n}",
+					"raw": "{\r\n    \"code\":\"ABC-444\",\r\n    \"create_at\": \"2023-11-25T20:45:58Z\",\r\n    \"total\":500.99,\r\n    \"client_id\":5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +61,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"id\": 3,\r\n        \"code\": \"333-444\",\r\n        \"create_at\": \"2023-11-25T20:45:58\",\r\n        \"total\": 100.99,\r\n        \"client\": 3,\r\n        \"details\": []\r\n    }",
+					"raw": "{\r\n    \"id\":4,\r\n    \"code\":\"ABC-1010\",\r\n    \"create_at\": \"2023-11-25T20:45:58Z\",\r\n    \"total\":450.99,\r\n    \"client_id\":5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -88,7 +89,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":6,\r\n    \"total\":100.99\r\n}",
+					"raw": "{\r\n    \"id\":4,\r\n    \"code\":\"ABC-1010\",\r\n    \"create_at\": \"2023-11-25T20:45:58Z\",\r\n    \"total\":500.99,\r\n    \"client_id\":5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -115,7 +116,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/invoice/invoice/2",
+					"raw": "http://localhost:8081/invoice/invoice/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -124,7 +125,7 @@
 					"path": [
 						"invoice",
 						"invoice",
-						"2"
+						"4"
 					]
 				}
 			},

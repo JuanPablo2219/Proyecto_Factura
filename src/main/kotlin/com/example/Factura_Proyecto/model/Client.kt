@@ -8,7 +8,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 import jakarta.validation.constraints.NotNull
 
-@Table(name = "Client")
+@Table(name = "client")
 @Entity
 class Client {
     @Id
@@ -16,14 +16,11 @@ class Client {
     @Column(updatable = false)
     var id: Long? = null
 
-    @Column(name = "nui", unique = true, nullable = false)
     var nui: String? = null
 
     @NotNull(message = "El campo FULLNAME es obligatorio")
-    @Column(name = "fullname", nullable = false)
     var fullname: String? = null
 
     @NotNull(message = "El campo ADRESS es obligatorio")
-    @Column(name = "adress", nullable = false)
     var adress: String? = null
 }
