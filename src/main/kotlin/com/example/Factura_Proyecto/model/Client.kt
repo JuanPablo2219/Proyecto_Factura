@@ -23,4 +23,6 @@ class Client {
 
     @NotNull(message = "El campo ADRESS es obligatorio")
     var adress: String? = null
+
+    var email: String? = null
 }

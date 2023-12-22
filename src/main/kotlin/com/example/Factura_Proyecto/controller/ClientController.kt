@@ -2,6 +2,7 @@ package com.example.Factura_Proyecto.controller
 
 import com.example.Factura_Proyecto.model.Client
 import com.example.Factura_Proyecto.service.ClientService
+import com.example.Factura_Proyecto.service.InvoiceService
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -14,6 +15,9 @@ class ClientController {
     @Autowired
     lateinit var clientService: ClientService
 
+    @Autowired
+    lateinit var invoiceService: InvoiceService
+
     @GetMapping
     fun list ():List <Client> {
         return clientService.list()
@@ -23,6 +27,12 @@ class ClientController {
     fun listById (@PathVariable("id") id: Long): ResponseEntity<*> {
         return ResponseEntity(clientService.listById(id), HttpStatus.OK)
     }
+
+    @GetMapping("/{clientId}/invoice")
+    fun filterClientInvoice (@PathVariable("clientId") clientId: Long ):ResponseEntity<*>{
+        return ResponseEntity(invoiceService.filterClientInvoice(clientId), HttpStatus.OK)
+    }
+
 
     @PostMapping
     fun save (@RequestBody @Valid client: Client): ResponseEntity<Client> {

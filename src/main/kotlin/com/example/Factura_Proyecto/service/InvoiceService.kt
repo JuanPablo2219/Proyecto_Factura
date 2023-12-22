@@ -3,6 +3,7 @@ package com.example.Factura_Proyecto.service
 import com.example.Factura_Proyecto.model.Invoice
 import com.example.Factura_Proyecto.repository.ClientRepository
 import com.example.Factura_Proyecto.repository.InvoiceRepository
+import jakarta.persistence.Id
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
@@ -18,6 +19,15 @@ class InvoiceService {
 
     fun list(): List<Invoice> {
         return invoiceRepository.findAll()
+    }
+
+    // nuevo metodo clase 28/11/2023
+    fun filterTotal(value:Double?): List<Invoice>? {
+        return invoiceRepository.filterTotal(value)
+    }
+
+    fun filterClientInvoice(clientId: Long): List<Invoice>? {
+        return invoiceRepository.filterClientInvoice(clientId)
     }
 
     fun listById(id: Long?): Invoice? {

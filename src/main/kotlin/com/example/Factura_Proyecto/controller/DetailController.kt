@@ -2,6 +2,7 @@ package com.example.Factura_Proyecto.controller
 
 import com.example.Factura_Proyecto.model.Detail
 import com.example.Factura_Proyecto.service.DetailService
+import com.example.Factura_Proyecto.service.ProductService
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -14,6 +15,9 @@ class DetailController {
     @Autowired
     lateinit var detailService: DetailService
 
+    @Autowired
+    lateinit var productService: ProductService
+
     @GetMapping
     fun list ():List <Detail> {
         return detailService.list()
@@ -24,10 +28,13 @@ class DetailController {
         return ResponseEntity(detailService.listById(id), HttpStatus.OK)
     }
 
+
     @PostMapping
     fun save (@RequestBody @Valid detail: Detail): ResponseEntity<Detail> {
         return ResponseEntity(detailService.save(detail), HttpStatus.OK)
     }
+
+
 
     @PutMapping
     fun update (@RequestBody detail: Detail): ResponseEntity<Detail> {

@@ -16,13 +16,13 @@ class Detail {
 
     var id: Long? = null
 
-    var quantity: Int? = null
+    var quantity: Int =0
 
-    var price: BigDecimal? = null
+    var price: Double = 0.0
 
     @JoinColumn(name = "invoice_id")
-    var invoice_id: Long? = null
+    var invoiceId: Long? = null
 
     @JoinColumn(name = "product_id")
-    var product_id: Long? = null
+    var productId: Long? = null
 }

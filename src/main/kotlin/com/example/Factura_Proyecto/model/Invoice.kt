@@ -21,11 +21,12 @@ class Invoice {
     var code: String? = null
 
     @Column(name = "create_at")
-    var create_at: LocalDate? = null
+    var createAt: LocalDate? = null
 
-    var total: BigDecimal? = null
+    var total: Double = 0.0
 
-    var client_id: Long? = null
+    @Column(name = "client_id")
+    var clientId: Long? = null
 
     // Relación con Detail [es una relación inversa, extrae datos de detail con los que tiene relacion en 'invoice_id']
 //    @OneToMany(mappedBy = "invoice_id", cascade = [CascadeType.ALL], orphanRemoval = true)

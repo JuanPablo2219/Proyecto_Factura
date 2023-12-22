@@ -1,5 +1,7 @@
 package com.example.Factura_Proyecto.service
 
+import com.example.Factura_Proyecto.dto.ProductDto
+import com.example.Factura_Proyecto.mapper.ProductMapper
 import com.example.Factura_Proyecto.model.Product
 import com.example.Factura_Proyecto.repository.DetailRepository
 import com.example.Factura_Proyecto.repository.ProductRepository
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
+import java.time.LocalDate
 
 @Service
 class ProductService {
@@ -18,6 +21,20 @@ class ProductService {
 
     fun list(): List<Product> {
         return productRepository.findAll()
+    }
+
+    fun listDto(): List<ProductDto> {
+        val productList = productRepository.findAll()
+
+        val miListaMutable: MutableList<ProductDto> = mutableListOf()
+
+        productList.forEach { product ->
+           val productDto =  ProductMapper.mapToDto(product)
+            miListaMutable.add(productDto)
+        }
+
+
+        return miListaMutable
     }
 
     fun listById(id: Long?): Product? {

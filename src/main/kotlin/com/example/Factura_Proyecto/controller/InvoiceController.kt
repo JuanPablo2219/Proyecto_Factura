@@ -24,6 +24,12 @@ class InvoiceController {
         return ResponseEntity(invoiceService.listById(id), HttpStatus.OK)
     }
 
+    // nuevo metodo clase 28/11/2023
+    @GetMapping("/filter-total/{value}")
+    fun filterTotal (@PathVariable("value") value: Double ):ResponseEntity<*>{
+        return ResponseEntity(invoiceService.filterTotal(value), HttpStatus.OK)
+    }
+
     @PostMapping
     fun save (@RequestBody @Valid invoice: Invoice): ResponseEntity<Invoice> {
         return ResponseEntity(invoiceService.save(invoice), HttpStatus.OK)
